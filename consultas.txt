@@ -1,0 +1,11 @@
+----1---------------
+SELECT `sku`, `cantidad`, `precio_unitario`, `costo_unitario` FROM `facturacion_detalle`
+
+
+
+
+--------2-----------------
+SELECT Fa.fecha_realizacion, Ter.documento, Ter.nombre, Fa.fact_consecutivo, FD.precio_unitario, FD.cantidad, FD.iva
+from tercero Ter 
+INNER join facturacion Fa on Ter.id_factura = Fa.id_factura 
+INNER join facturacion_detalle FD on Ter.id_detalle = FD.id_detalle ORDER by fecha_realizacion ASC
